@@ -1,0 +1,20 @@
+button {
+  box-sizing: border-box;
+  font-size: 32px;
+  padding: 10px 30px;
+}
+
+button:hover {
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(2n-1) {
+  background-color: #d2d2d2;
+}
