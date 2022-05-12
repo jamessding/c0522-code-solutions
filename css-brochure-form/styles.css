@@ -27,12 +27,12 @@ select {
   margin-top: 3px;
   text-align: center;
   border: 1px solid #bcbfbf;
-  font-family: "Brandon Grotesque";
+  font-family: "Brandon Grotesque", sans-serif;
 }
 
 label {
   padding-left: 15px;
-  font-family: "Brandon Grotesque";
+  font-family: "Brandon Grotesque", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
@@ -41,7 +41,7 @@ label {
 h3 {
   text-align: center;
   color: #ec5c57;
-  font-family: "Brandon Grotesque";
+  font-family: "Brandon Grotesque", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -55,7 +55,7 @@ h3 {
   text-align: left;
   color: #999;
   padding-left: 5px;
-  font-family: AtlasGrotesk;
+  font-family: AtlasGrotesk, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
@@ -72,7 +72,7 @@ option {
   border-radius: 30px;
   padding: 10px 30px;
   margin-top: 5px;
-  font-family: "Brandon Grotesque";
+  font-family: "Brandon Grotesque", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
