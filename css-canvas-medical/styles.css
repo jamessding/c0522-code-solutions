@@ -187,8 +187,8 @@ a {
   margin: 5px;
 }
 
-.margin-top-30 {
-  margin-top: 30px;
+.margin-top-60 {
+  margin-top: 60px;
 }
 
 .margin-left-40 {
@@ -285,6 +285,20 @@ h1 {
   left: 100px;
 }
 
+.product-title {
+  position: absolute;
+  top: 230px;
+  left: 100px;
+}
+
+.product-text {
+  position: absolute;
+  top: 380px;
+  left: 100px;
+  right: 645px;
+  line-height: 1.75;
+}
+
 hr {
   height: 1px;
   background-color: #e6e9ec;
@@ -293,4 +307,19 @@ hr {
 
 .line-height {
   line-height: 1.75;
+}
+
+.product-header {
+  width: 85%;
+  height: 720px;
+  background-image: url("images/product/product-header.jpg");
+  background-size: cover;
+  position: relative;
+  margin-left: 120px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.italics {
+  font-style: italic;
 }
