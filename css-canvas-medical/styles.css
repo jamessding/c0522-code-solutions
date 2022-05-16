@@ -64,6 +64,10 @@
   color: #a0a0a0;
 }
 
+.color-dark-grey {
+  color: #50514f;
+}
+
 .background-grey {
   background-color: #525351;
 }
@@ -330,4 +334,29 @@ hr {
 
 .italics {
   font-style: italic;
+}
+
+.implementation-header {
+  width: 85%;
+  height: 720px;
+  background-image: url("images/implementation/implementation-header.jpg");
+  background-size: cover;
+  position: relative;
+  margin-left: 120px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.implementation-title {
+  position: absolute;
+  top: 120px;
+  left: 100px;
+}
+
+.implementation-text {
+  position: absolute;
+  top: 350px;
+  left: 100px;
+  right: 645px;
+  line-height: 1.75;
 }
