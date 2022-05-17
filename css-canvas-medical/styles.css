@@ -100,6 +100,10 @@
   display: block;
 }
 
+.display-inline {
+  display: inline;
+}
+
 img.logo {
   height: 65px;
   width: 180px;
@@ -154,6 +158,10 @@ a {
   padding-bottom: 50px;
 }
 
+.padding-bottom-150 {
+  padding-bottom: 150px;
+}
+
 .padding-top-80 {
   padding-top: 80px;
 }
@@ -189,6 +197,11 @@ a {
 .padding-topbottom-75 {
   padding-top: 75px;
   padding-bottom: 75px;
+}
+
+.padding-leftright-450 {
+  padding-left: 450px;
+  padding-right: 450px;
 }
 
 .normal-line-height {
