@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.column-one-fourth {
+  flex-basis: calc(100% / 4);
+}
+
+.font-style {
+  font-family: Barlow, sans-serif;
+}
+
+.screen {
+  width: 100%;
+  height: auto;
+}
+
+.icon {
+  width: 20%;
+  height: auto;
+}
+
+.padding-bottom-20 {
+  padding-bottom: 20px;
+}
+
+.padding-top-20 {
+  padding-top: 20px;
+}
+
+.background-color-grey {
+  background-color: #f7f8fa;
+}
