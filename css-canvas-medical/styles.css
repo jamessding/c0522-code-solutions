@@ -216,8 +216,20 @@ a {
   margin: 5px;
 }
 
+.margin-top-80 {
+  margin-top: 80px;
+}
+
 .margin-top-60 {
   margin-top: 60px;
+}
+
+.margin-top-40 {
+  margin-top: 50px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
 }
 
 .margin-left-40 {
@@ -433,7 +445,7 @@ hr {
   background-color: white;
 }
 
-img {
+.circle-container > img {
   height: 280px;
   width: 280px;
   border-radius: 50%;
