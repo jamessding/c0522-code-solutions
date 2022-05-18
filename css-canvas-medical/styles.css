@@ -224,6 +224,18 @@ a {
   margin-left: 40px;
 }
 
+.margin-right-40 {
+  margin-right: 40px;
+}
+
+.margin-left-60 {
+  margin-left: 60px;
+}
+
+.margin-right-60 {
+  margin-right: 60px;
+}
+
 .padding-top-50 {
   padding-top: 50px;
 }
@@ -412,7 +424,17 @@ hr {
   right: 0;
 }
 
-.circle-image-box {
-  height: 300px;
-  width: auto;
+.circle-container {
+  border-radius: 50%;
+  height: 280px;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+img {
+  height: 280px;
+  width: 280px;
+  border-radius: 50%;
 }
