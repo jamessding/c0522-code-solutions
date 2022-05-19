@@ -450,3 +450,15 @@ hr {
   width: 280px;
   border-radius: 50%;
 }
+
+::placeholder {
+  color: #d4d4d4;
+  font-size: 1rem;
+}
+
+.input-border {
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: 1px solid #bababa;
+}
