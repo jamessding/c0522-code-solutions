@@ -20,6 +20,10 @@
   flex-basis: calc(100%/3);
 }
 
+.column-two-thirds {
+  flex-basis: calc(200%/3);
+}
+
 .column-one-sixth {
   flex-basis: calc(100%/6);
 }
