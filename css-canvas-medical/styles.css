@@ -178,6 +178,10 @@ a {
   padding-top: 80px;
 }
 
+.padding-top-120 {
+  padding-top: 120px;
+}
+
 .padding-top-140 {
   padding-top: 140px;
 }
@@ -319,6 +323,10 @@ h1 {
   font-size: 27px;
 }
 
+.font-size-29 {
+  font-size: 29px;
+}
+
 .font-size-42 {
   font-size: 42px;
 }
@@ -393,6 +401,10 @@ hr {
 
 .line-height {
   line-height: 1.75;
+}
+
+.line-height-15 {
+  line-height: 1.5;
 }
 
 .product-header {
@@ -487,19 +499,25 @@ hr {
 ::placeholder {
   color: #d4d4d4;
   font-size: 30px;
+  font-family: Avenir, sans-serif;
 }
 
 .input-border {
   border-top: transparent;
   border-left: transparent;
   border-right: transparent;
-  border-bottom: 1px solid #bababa;
+  border-bottom: 2px solid #bababa;
   text-align: center;
   height: 50px;
+  padding-bottom: 10px;
 }
 
 .blog-images {
   width: 580px;
   height: 330px;
   object-fit: cover;
+}
+
+.min-height {
+  min-height: 150px;
 }
