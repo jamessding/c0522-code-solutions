@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-modal {
+  border-radius: 5px;
+  height: 60px;
+  width: 270px;
+  border: none;
+  background-color: #4a4ae8;
+  color: #fefefe;
+  font-size: 32px;
+  box-shadow: 0 5px 5px #a1a2a2;
+  margin: 10px;
+}
+
+.button-no {
+  border-radius: 5px;
+  height: 70px;
+  width: 150px;
+  border: none;
+  font-size: 32px;
+  background-color: #eb5d5d;
+  box-shadow: 0 5px 5px #a1a2a2;
+  color: #fefefe;
+}
+
+.off-container {
+  display: none;
+}
+
+.on-container {
+  display: contents;
+}
+
+.overlay {
+  position: absolute;
+  background: rgb(0 0 0 / 80%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.pop-up-container {
+  width: 700px;
+  height: 350px;
+  background-color: white;
+  position: fixed;
+  top: 300px;
+  right: 500px;
+  text-align: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.pop-up-text {
+  position: relative;
+  top: 50px;
+  font-size: 40px;
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+}
+
+.pop-up-button {
+  position: relative;
+  top: 90px;
+}
