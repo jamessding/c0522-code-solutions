@@ -10,12 +10,22 @@
 
 function isAnagram(firstString, secondString) {
   var counter = 0;
-  var firstStringArr = firstString.split(' ').join('').split('');
-  var secondStringArr = secondString.split(' ').join('').split('');
-  for (var i = 0; i < firstStringArr.length; i++) {
-    for (var j = 0; j < secondStringArr.length; j++) {
-      if (firstStringArr[i] === secondStringArr[j]) {
-        secondStringArr[j] = 0;
+  var firstStringArr = [];
+  var secondStringArr = [];
+  for (var i = 0; i < firstString.length; i++) {
+    if (firstString[i] !== ' ') {
+      firstStringArr.push(firstString[i]);
+    }
+  }
+  for (var j = secondString.length - 1; j >= 0; j--) {
+    if (secondString[j] !== ' ') {
+      secondStringArr.push(secondString[j]);
+    }
+  }
+  for (var k = 0; k < firstStringArr.length; k++) {
+    for (var l = 0; l < secondStringArr.length; l++) {
+      if (firstStringArr[k] === secondStringArr[l]) {
+        secondStringArr[l] = 0;
         counter++;
         break;
       }

@@ -7,13 +7,18 @@
 // else return false
 function isPalindromic(string) {
   var counter = 0;
-  string = string.split(' ').join('');
-  for (var i = 0; i < Math.floor(string.length / 2); i++) {
-    if (string[i] === string[string.length - i - 1]) {
+  var stringArr = [];
+  for (var i = 0; i < string.length; i++) {
+    if (string[i] !== ' ') {
+      stringArr.push(string[i]);
+    }
+  }
+  for (var j = 0; j < Math.floor(stringArr.length / 2); j++) {
+    if (stringArr[j] === stringArr[stringArr.length - j - 1]) {
       counter++;
     }
   }
-  if (counter === Math.floor(string.length / 2)) {
+  if (counter === Math.floor(stringArr.length / 2)) {
     return true;
   } else {
     return false;
