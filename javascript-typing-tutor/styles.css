@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.word-div {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+}
+
+.correct {
+  color: #19cd1b;
+}
+
+.incorrect {
+  color: #f80605;
+}
+
+.underline {
+  border-bottom: 5px solid;
+}
+
+.accuracy {
+  display: none;
+}
+
+.time {
+  display: none;
+}
+
+.wpm {
+  display: none;
+}
