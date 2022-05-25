@@ -7,12 +7,13 @@ var $spansList = document.querySelectorAll('span');
 var $accuracy = document.querySelector('.accuracy');
 var $time = document.querySelector('.time');
 var $wpm = document.querySelector('.wpm');
+var $reset = document.querySelector('.reset');
 startTime = new Date();
 function handleKey(event) {
   if ($spansList[i].textContent === ' ') {
     wordCounter++;
   }
-  if ($spansList[i].textContent === String.fromCharCode(event.keyCode).toLowerCase()) {
+  if ($spansList[i].textContent === event.key) {
     $spansList[i].className = 'correct';
     if (i === $spansList.length - 1) {
       $accuracy.className = '';
@@ -31,4 +32,19 @@ function handleKey(event) {
     counter++;
   }
 }
+
+function handleButton(event) {
+  i = 0;
+  counter = 0;
+  wordCounter = 1;
+  $accuracy.className = 'accuracy';
+  $time.className = 'time';
+  $wpm.className = 'wpm';
+  $spansList[0].className = 'underline';
+  for (var j = 1; j < $spansList.length; j++) {
+    $spansList[j].className = '';
+  }
+}
+
 window.addEventListener('keydown', handleKey);
+$reset.addEventListener('click', handleButton);
