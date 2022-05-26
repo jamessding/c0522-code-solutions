@@ -38,12 +38,16 @@ function handleButton(event) {
   counter = 0;
   wordCounter = 1;
   $accuracy.className = 'accuracy';
+  $accuracy.textContent = 'Accuracy: ';
   $time.className = 'time';
+  $time.textContent = 'time: ';
   $wpm.className = 'wpm';
+  $wpm.textContent = 'WPM: ';
   $spansList[0].className = 'underline';
   for (var j = 1; j < $spansList.length; j++) {
     $spansList[j].className = '';
   }
+  startTime = new Date();
 }
 
 window.addEventListener('keydown', handleKey);
