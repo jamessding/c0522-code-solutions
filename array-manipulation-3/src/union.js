@@ -1,33 +1,24 @@
 /* exported union */
+// create an empty array named result
+// for each index k from 0 to first length, add first at k to end of result
+// for each index i from 0 to second length, initialize counter with value 0
+// for each index j from 0 to first length, if second at i is strictly not equal to first at j, increment counter
+// if counter is strictly equal to first length, add second at i to end of result
+// return result
 function union(first, second) {
   var result = [];
-  if (first[0] !== undefined) {
-    result.push(first[0]);
+  for (var k = 0; k < first.length; k++) {
+    result.push(first[k]);
   }
-  for (var i = 1; i < first.length; i++) {
+  for (var i = 0; i < second.length; i++) {
     var counter = 0;
-    for (var k = 0; k < second.length; k++) {
-      if (first[i] !== second[k]) {
+    for (var j = 0; j < first.length; j++) {
+      if (second[i] !== first[j]) {
         counter++;
       }
     }
-    if (counter === second.length) {
-      for (var l = 0; l < result.length; l++) {
-        if (first[i] !== result[i]) {
-          result.push(first[i]);
-        }
-      }
-    }
-  }
-  for (var m = 0; m < second.length; m++) {
-    var secondCounter = 0;
-    for (var p = 0; p < first.length; p++) {
-      if (second[m] !== first[i]) {
-        secondCounter++;
-      }
-    }
-    if (secondCounter === first.length) {
-      result.push(second[m]);
+    if (counter === first.length) {
+      result.push(second[i]);
     }
   }
   return result;
