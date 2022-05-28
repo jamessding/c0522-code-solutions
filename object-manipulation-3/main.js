@@ -1,11 +1,9 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 function cardGame(playerNames, handCardNumber) {
-  // var playerNames = ['James', 'Nathan', 'Tim', 'Yuhan'];
   var deck = [];
   var players = [];
   var rankNames = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
   var suitNames = ['clubs', 'diamonds', 'hearts', 'spades'];
-  // var handCardNumber = 2;
   for (var i = 0; i < 4; i++) {
     players.push({
       name: playerNames[i],
@@ -33,7 +31,6 @@ function cardGame(playerNames, handCardNumber) {
   }
   var winner = '';
   var winnerCardValue = 0;
-  // var tiedPlayers = [];
   for (var m = 0; m < players.length; m++) {
     var playerCardValue = 0;
     for (var n = 0; n < handCardNumber; n++) {
@@ -50,8 +47,8 @@ function cardGame(playerNames, handCardNumber) {
       winnerCardValue = playerCardValue;
     }
   }
-  console.log('winner:', winner);
+  console.log('winner:', winner.name);
+  console.log('winning cards:', winner.hand);
 }
 
 cardGame(['James', 'Nathan', 'Tim', 'Yuhan'], 2);
-// stores array of objects with the same high scores, runs card game again if array is > 1
