@@ -10,68 +10,63 @@ function swapImage(event) {
   if (event.target.tagName !== 'I') {
     return;
   }
-  var imageId = $image.getAttribute('data-id');
+  var imageId = Number($image.getAttribute('data-id'));
   if (event.target.className === 'fas fa-chevron-left fa-5x') {
-    if (imageId === '0') {
-      $image.setAttribute('data-id', urlArrayLength - 1);
-      setTimeout(function () { $image.setAttribute('src', urlArray[urlArrayLength - 1]); }, 100);
-      $dots[(urlArrayLength - 1).toString()].className = 'fas fa-circle fa-2x padding';
-      $dots[0].className = 'far fa-circle fa-2x padding';
+    if (imageId === 0) {
+      changeImage(urlArrayLength - 1);
     } else {
-      $image.setAttribute('data-id', Number(imageId) - 1);
-      setTimeout(function () { $image.setAttribute('src', urlArray[Number(imageId) - 1]); }, 100);
-      $dots[Number(imageId) - 1].className = 'fas fa-circle fa-2x padding';
-      $dots[Number(imageId)].className = 'far fa-circle fa-2x padding';
+      changeImage(imageId - 1);
     }
   } else if (event.target.className === 'fas fa-chevron-right fa-5x') {
-    if (imageId === (urlArrayLength - 1).toString()) {
-      $image.setAttribute('data-id', 0);
-      setTimeout(function () { $image.setAttribute('src', urlArray[0]); }, 100);
-      $dots[0].className = 'fas fa-circle fa-2x padding';
-      $dots[(urlArrayLength - 1).toString()].className = 'far fa-circle fa-2x padding';
+    if (imageId === (urlArrayLength - 1)) {
+      changeImage(0);
     } else {
-      $image.setAttribute('data-id', Number(imageId) + 1);
-      setTimeout(function () { $image.setAttribute('src', urlArray[Number(imageId) + 1]); }, 100);
-      $dots[Number(imageId) + 1].className = 'fas fa-circle fa-2x padding';
-      $dots[Number(imageId)].className = 'far fa-circle fa-2x padding';
+      changeImage(imageId + 1);
+
     }
   } else {
     if (event.target.className === 'fas fa-circle fa-2x padding') {
       return;
     }
-    for (var i = 0; i < $dots.length; i++) {
-      if ($dots[i].className === 'fas fa-circle fa-2x padding') {
-        $dots[i].className = 'far fa-circle fa-2x padding';
-      } else if ($dots[i].getAttribute('data-id') === event.target.getAttribute('data-id')) {
-        $dots[i].className = 'fas fa-circle fa-2x padding';
-        $image.setAttribute('data-id', i);
-        $image.setAttribute('src', urlArray[i]);
-      }
-    }
+    var iconId = Number(event.target.getAttribute('data-id'));
+    changeImage(iconId);
   }
+}
+
+function changeImage(index) {
+  $image.setAttribute('data-id', index);
+  setTimeout(setAttribute, 100, index);
+  for (var i = 0; i < $dots.length; i++) {
+    $dots[i].className = $dots[i].className = 'far fa-circle fa-2x padding';
+  }
+  $dots[index].className = 'fas fa-circle fa-2x padding';
+}
+
+function setAttribute(index) {
+  $image.setAttribute('src', urlArray[index]);
 }
 
 function nextImage() {
   transitionRight();
-  var imageId = $image.getAttribute('data-id');
-  if (imageId === (urlArrayLength - 1).toString()) {
+  var imageId = Number($image.getAttribute('data-id'));
+  if (imageId === (urlArrayLength - 1)) {
     $image.setAttribute('data-id', 0);
     $image.setAttribute('src', urlArray[0]);
     $dots[0].className = 'fas fa-circle fa-2x padding';
-    $dots[(urlArrayLength - 1).toString()].className = 'far fa-circle fa-2x padding';
+    $dots[(urlArrayLength - 1)].className = 'far fa-circle fa-2x padding';
   } else {
-    $image.setAttribute('data-id', Number(imageId) + 1);
-    $image.setAttribute('src', urlArray[Number(imageId) + 1]);
-    $dots[Number(imageId) + 1].className = 'fas fa-circle fa-2x padding';
-    $dots[Number(imageId)].className = 'far fa-circle fa-2x padding';
+    $image.setAttribute('data-id', imageId + 1);
+    $image.setAttribute('src', urlArray[imageId + 1]);
+    $dots[imageId + 1].className = 'fas fa-circle fa-2x padding';
+    $dots[imageId].className = 'far fa-circle fa-2x padding';
   }
 }
 
 function transitionRight() {
-  timeouts.push(setTimeout(function () { $transitionDiv.classList.add('transition-right'); }, 2700));
-  timeouts.push(setTimeout(function () { $image.classList.add('position-right'); }, 3000));
-  timeouts.push(setTimeout(function () { $transitionDiv.classList.remove('transition-right'); }, 3300));
-  timeouts.push(setTimeout(function () { $image.classList.remove('position-right'); }, 3300));
+  timeouts.push(setTimeout(addRightTransition, 2700));
+  timeouts.push(setTimeout(addRightPosition, 3000));
+  timeouts.push(setTimeout(removeRightTransition, 3300));
+  timeouts.push(setTimeout(removeRightPosition, 3300));
 }
 
 function clearTimeouts() {
@@ -81,18 +76,38 @@ function clearTimeouts() {
 }
 
 function transitionLeft() {
-  timeouts.push(setTimeout(function () { $transitionDiv.classList.add('transition-left'); }, 0));
-  timeouts.push(setTimeout(function () { $image.classList.add('position-left'); }, 100));
-  timeouts.push(setTimeout(function () { $transitionDiv.classList.remove('transition-left'); }, 200));
-  timeouts.push(setTimeout(function () { $image.classList.remove('position-left'); }, 200));
+  timeouts.push(setTimeout(addLeftTransition, 0));
+  timeouts.push(setTimeout(addLeftPosition, 100));
+  timeouts.push(setTimeout(removeLeftTransition, 200));
+  timeouts.push(setTimeout(removeLeftPosition, 200));
 }
 
 function transitionRightFast() {
-  timeouts.push(setTimeout(function () { $transitionDiv.classList.add('transition-right-fast'); }, 0));
-  timeouts.push(setTimeout(function () { $image.classList.add('position-right'); }, 100));
-  timeouts.push(setTimeout(function () { $transitionDiv.classList.remove('transition-right-fast'); }, 200));
-  timeouts.push(setTimeout(function () { $image.classList.remove('position-right'); }, 200));
+  timeouts.push(setTimeout(addRightTransitionFast, 0));
+  timeouts.push(setTimeout(addRightPosition, 100));
+  timeouts.push(setTimeout(removeRightTransitionFast, 200));
+  timeouts.push(setTimeout(removeRightPosition, 200));
 }
+
+function addRightTransition() { $transitionDiv.classList.add('transition-right'); }
+
+function addRightPosition() { $image.classList.add('position-right'); }
+
+function removeRightTransition() { $transitionDiv.classList.remove('transition-right'); }
+
+function removeRightPosition() { $image.classList.remove('position-right'); }
+
+function addLeftTransition() { $transitionDiv.classList.add('transition-left'); }
+
+function addLeftPosition() { $image.classList.add('position-left'); }
+
+function removeLeftTransition() { $transitionDiv.classList.remove('transition-left'); }
+
+function removeLeftPosition() { $image.classList.remove('position-left'); }
+
+function addRightTransitionFast() { $transitionDiv.classList.add('transition-right-fast'); }
+
+function removeRightTransitionFast() { $transitionDiv.classList.remove('transition-right-fast'); }
 
 transitionRight();
 document.addEventListener('click', swapImage);
