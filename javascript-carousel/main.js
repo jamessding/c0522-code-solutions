@@ -14,24 +14,24 @@ function swapImage(event) {
   if (event.target.className === 'fas fa-chevron-left fa-5x') {
     if (imageId === '0') {
       $image.setAttribute('data-id', urlArrayLength - 1);
-      $image.setAttribute('src', urlArray[urlArrayLength - 1]);
+      setTimeout(function () { $image.setAttribute('src', urlArray[urlArrayLength - 1]); }, 100);
       $dots[(urlArrayLength - 1).toString()].className = 'fas fa-circle fa-2x padding';
       $dots[0].className = 'far fa-circle fa-2x padding';
     } else {
       $image.setAttribute('data-id', Number(imageId) - 1);
-      $image.setAttribute('src', urlArray[Number(imageId) - 1]);
+      setTimeout(function () { $image.setAttribute('src', urlArray[Number(imageId) - 1]); }, 100);
       $dots[Number(imageId) - 1].className = 'fas fa-circle fa-2x padding';
       $dots[Number(imageId)].className = 'far fa-circle fa-2x padding';
     }
   } else if (event.target.className === 'fas fa-chevron-right fa-5x') {
     if (imageId === (urlArrayLength - 1).toString()) {
       $image.setAttribute('data-id', 0);
-      $image.setAttribute('src', urlArray[0]);
+      setTimeout(function () { $image.setAttribute('src', urlArray[0]); }, 100);
       $dots[0].className = 'fas fa-circle fa-2x padding';
       $dots[(urlArrayLength - 1).toString()].className = 'far fa-circle fa-2x padding';
     } else {
       $image.setAttribute('data-id', Number(imageId) + 1);
-      $image.setAttribute('src', urlArray[Number(imageId) + 1]);
+      setTimeout(function () { $image.setAttribute('src', urlArray[Number(imageId) + 1]); }, 100);
       $dots[Number(imageId) + 1].className = 'fas fa-circle fa-2x padding';
       $dots[Number(imageId)].className = 'far fa-circle fa-2x padding';
     }
