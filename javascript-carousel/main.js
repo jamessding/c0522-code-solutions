@@ -3,6 +3,8 @@ var $dots = document.querySelectorAll('.fa-circle');
 var urlArray = ['images/001.png', 'images/004.png', 'images/007.png', 'images/025.png', 'images/039.png'];
 var urlArrayLength = urlArray.length;
 var entryId = setInterval(nextImage, 3000);
+var $transitionDiv = document.querySelector('.transition-div');
+var timeouts = [];
 
 function swapImage(event) {
   if (event.target.tagName !== 'I') {
@@ -50,6 +52,7 @@ function swapImage(event) {
 }
 
 function nextImage() {
+  transitionRight();
   var imageId = $image.getAttribute('data-id');
   if (imageId === (urlArrayLength - 1).toString()) {
     $image.setAttribute('data-id', 0);
@@ -64,8 +67,43 @@ function nextImage() {
   }
 }
 
+function transitionRight() {
+  timeouts.push(setTimeout(function () { $transitionDiv.classList.add('transition-right'); }, 2700));
+  timeouts.push(setTimeout(function () { $image.classList.add('position-right'); }, 3000));
+  timeouts.push(setTimeout(function () { $transitionDiv.classList.remove('transition-right'); }, 3300));
+  timeouts.push(setTimeout(function () { $image.classList.remove('position-right'); }, 3300));
+}
+
+function clearTimeouts() {
+  for (var i = 0; i < timeouts.length; i++) {
+    clearTimeout(timeouts[i]);
+  }
+}
+
+function transitionLeft() {
+  timeouts.push(setTimeout(function () { $transitionDiv.classList.add('transition-left'); }, 0));
+  timeouts.push(setTimeout(function () { $image.classList.add('position-left'); }, 100));
+  timeouts.push(setTimeout(function () { $transitionDiv.classList.remove('transition-left'); }, 200));
+  timeouts.push(setTimeout(function () { $image.classList.remove('position-left'); }, 200));
+}
+
+function transitionRightFast() {
+  timeouts.push(setTimeout(function () { $transitionDiv.classList.add('transition-right-fast'); }, 0));
+  timeouts.push(setTimeout(function () { $image.classList.add('position-right'); }, 100));
+  timeouts.push(setTimeout(function () { $transitionDiv.classList.remove('transition-right-fast'); }, 200));
+  timeouts.push(setTimeout(function () { $image.classList.remove('position-right'); }, 200));
+}
+
+transitionRight();
 document.addEventListener('click', swapImage);
-document.addEventListener('click', function () {
+document.addEventListener('click', function (event) {
   clearInterval(entryId);
-  setTimeout(entryId = setInterval(nextImage, 3000), 2000);
+  clearTimeouts();
+  if (event.target.className === 'fas fa-chevron-left fa-5x') {
+    transitionLeft();
+  } else if (event.target.className === 'fas fa-chevron-right fa-5x') {
+    transitionRightFast();
+  }
+  setTimeout(entryId = setInterval(nextImage, 3000), 3000);
+  transitionRight();
 });

@@ -47,3 +47,32 @@ body {
 .margin-top {
   margin-top: 5rem;
 }
+
+.overflow {
+  overflow: hidden;
+}
+
+.transition-right {
+  transition: all 0.5s linear;
+  transform: translateX(-160%);
+}
+
+.transition-right-fast {
+  transition: all 0.2s linear;
+  transform: translateX(-160%);
+}
+
+.position-right {
+  position: relative;
+  left: 50rem;
+}
+
+.transition-left {
+  transition: all 0.2s linear;
+  transform: translateX(160%);
+}
+
+.position-left {
+  position: relative;
+  left: -50rem;
+}
