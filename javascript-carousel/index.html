@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row margin-top">
+      <div class="column-one-fourth left center">
+        <i class="fas fa-chevron-left fa-5x"></i>
+      </div>
+      <div class="column-one-half overflow">
+        <div class="row transition-div">
+          <img data-id="0" src="images/001.png">
+        </div>
+      </div>
+      <div class="column-one-fourth right center">
+        <i class="fas fa-chevron-right fa-5x"></i>
+      </div>
+    </div>
+    <div class="row justify-center">
+      <i data-id="0" class="fas fa-circle fa-2x padding"></i>
+      <i data-id="1" class="far fa-circle fa-2x padding"></i>
+      <i data-id="2" class="far fa-circle fa-2x padding"></i>
+      <i data-id="3" class="far fa-circle fa-2x padding"></i>
+      <i data-id="4" class="far fa-circle fa-2x padding"></i>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
