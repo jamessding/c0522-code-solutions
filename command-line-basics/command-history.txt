@@ -1,0 +1,64 @@
+    1  git status
+    2  git branch command-line-basics
+    3  git switch command-line-basics
+    4  cd command-line-basics
+    5  man man
+    6  man cat
+    7  maman cat
+    8  man cat
+    9  cat laziness.txt
+   10  cat impatience.txt
+   11  cat hybris.tt
+   12  cat hubris.txt
+   13  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+   14  cat three-virtues.txt
+   15  man ls
+   16  ls
+   17  ls
+   18  ls -a
+   19  ls -F
+   20  man ls
+   21  ls lfz-staff
+   22  ls lfz-staff -a
+   23  lsls lfz-staff -F
+   24  ls lfz-staff -F
+   25  ls -aF lfz-staff > lfz-staff/contents.txt
+   26  cat lfz-staff/contents.txt
+   27  man pwd
+   28  pwd > i-was-here.txt
+   29  ls
+   30  cat i-was-here.txt
+   31  man echo
+   32  echo 'Hello, World!'
+   33  echo 'Hello, World!' > hello.txt
+   34  ls
+   35  cat hello.txt
+   36  man touch
+   37  touch tag-youre-it.txt
+   38  touch snoot/boop.txt
+   39  ls snoot
+   40  man mkdir
+   41  mkdir parent
+   42  ls
+   43  mkdir -p parent/child/grandchild
+   44  touch parent/child/grandchild/.gitkeep
+   45  ls -a
+   46  man mv
+   47  mv pokiemans pokemon
+   48  ls
+   49  man rm
+   50  rm lol.txt
+   51  ls
+   52  rm -r kill-me
+   53  ls
+   54  man cp
+   55  man cp
+   56  cp and-then.txt no-and-then.txt
+   57  ls
+   58  ls -F
+   59  ls -a
+   60  cat and-then.txt
+   61  cat no-and-then.txt
+   62  man history
+   63  history
+   64  history > command-history.txt
