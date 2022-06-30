@@ -2,8 +2,8 @@ const fs = require('fs');
 const json = require('./data.json');
 
 if (process.argv[2] === 'read') {
-  for (const key in json.notes) {
-    console.log(`${key}: ${json.notes[key]}`);
+  for (var i = 1; i < json.nextId - 1; i++) {
+    console.log(`${i}: ${json.notes[i]}`);
   }
 } else if (process.argv[2] === 'create') {
   json.notes[json.nextId] = process.argv[3];
