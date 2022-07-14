@@ -1,0 +1,33 @@
+.button {
+  padding: 0.5rem 1rem;
+}
+
+.blue {
+  background-color: #351c74;
+  color: white;
+}
+
+.purple {
+  background-color: #674ea7;
+  color: white;
+}
+
+.red {
+  background-color: #e06666;
+  color: white;
+}
+
+.orange {
+  background-color: #f6b26b;
+  color: black;
+}
+
+.yellow {
+  background-color: #ff0;
+  color: black;
+}
+
+.white {
+  background-color: #fff;
+  color: black;
+}
