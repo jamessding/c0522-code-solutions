@@ -1,0 +1,18 @@
+.container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  right: 95px;
+  top: 65px;
+}
+
+.center {
+  padding-left: 5.5rem;
+  padding-top: 2rem;
+}
