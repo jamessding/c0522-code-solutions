@@ -25,17 +25,16 @@ class RegistrationForm extends React.Component {
 
   render() {
     return (
-      <form>
-        <label>Username</label>
-        <input type="text" value={this.state.username} onChange={this.handleUsernameChange}></input>
-        <label>Password</label>
-        <input type="password" value={this.state.password} onChange={this.handlePasswordChange}></input>
-        <button onClick={this.handleSubmit}>Sign Up</button>
+      <form onSubmit={this.handleSubmit}>
+        <label htmlFor="signup-username">Username</label>
+        <input name="username" type="text" id="signup-username" value={this.state.username} onChange={this.handleUsernameChange}></input>
+        <label htmlFor="signup-password">Password</label>
+        <input name="password" type="password" id="signup-password" value={this.state.password} onChange={this.handlePasswordChange}></input>
+        <button>Sign Up</button>
       </form>
     );
   }
 }
 
-const element = <RegistrationForm />;
 const root = ReactDOM.createRoot(document.querySelector('#root'));
-root.render(element);
+root.render(<RegistrationForm />);
