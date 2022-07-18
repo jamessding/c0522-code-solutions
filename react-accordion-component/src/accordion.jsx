@@ -25,26 +25,26 @@ export default class Accordion extends React.Component {
   render() {
     return (
 
-      <div>
-        <div className='container'>
-          <h1>Hypertext Markup Language</h1>
-        </div>
-        <div className='details-container'>
-          <p className='details'></p>
-        </div>
-        <div className='container'>
-          <h1>Cascading Style Sheets</h1>
-        </div>
-        <div className='details-container'>
-          <p className='details'></p>
-        </div>
-        <div className='container'>
-          <h1>JavaScript</h1>
-        </div>
-        <div className='details-container'>
-          <p className='details'></p>
-        </div>
-      </div>
+      // <div>
+      //   <div className='container'>
+      //     <h1>Hypertext Markup Language</h1>
+      //   </div>
+      //   <div className='details-container'>
+      //     <p className='details'></p>
+      //   </div>
+      //   <div className='container'>
+      //     <h1>Cascading Style Sheets</h1>
+      //   </div>
+      //   <div className='details-container'>
+      //     <p className='details'></p>
+      //   </div>
+      //   <div className='container'>
+      //     <h1>JavaScript</h1>
+      //   </div>
+      //   <div className='details-container'>
+      //     <p className='details'></p>
+      //   </div>
+      // </div>
     );
   }
 }
