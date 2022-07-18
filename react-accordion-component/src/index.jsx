@@ -9,4 +9,4 @@ const topics = [
 ];
 
 const root = ReactDOM.createRoot(document.querySelector('#root'));
-root.render(<Accordion topics={topics} />);
+root.render(<Accordion topics={topics}/>);
