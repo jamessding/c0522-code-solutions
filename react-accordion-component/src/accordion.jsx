@@ -11,40 +11,52 @@ export default class Accordion extends React.Component {
     this.setState({ topic: event.target.value });
   }
 
-  listTopic(props) {
-    return <li>{props.value}</li>;
+  ListTopic(props) {
+    return (
+      <div className='container'>
+        <h1>{props.value}</h1>
+      </div>
+    );
   }
 
   topicList(props) {
     const topics = props.topics;
     const listTopics = topics.map(topic =>
-      <ListTopic key={topic.name} value={topic.details} />
+      <ListTopic key={topic.name} value={topic.name} />
     );
+    return listTopics;
   }
 
   render() {
-    return (
-
-      // <div>
-      //   <div className='container'>
-      //     <h1>Hypertext Markup Language</h1>
-      //   </div>
-      //   <div className='details-container'>
-      //     <p className='details'></p>
-      //   </div>
-      //   <div className='container'>
-      //     <h1>Cascading Style Sheets</h1>
-      //   </div>
-      //   <div className='details-container'>
-      //     <p className='details'></p>
-      //   </div>
-      //   <div className='container'>
-      //     <h1>JavaScript</h1>
-      //   </div>
-      //   <div className='details-container'>
-      //     <p className='details'></p>
-      //   </div>
-      // </div>
-    );
+    const topic = this.state.topic;
+    if (topic === '') {
+      return (
+        <div>
+          <this.topicList />
+        </div>
+      );
+    }
   }
+
+  // <div>
+  //   <div className='container'>
+  //     <h1>Hypertext Markup Language</h1>
+  //   </div>
+  //   <div className='details-container'>
+  //     <p className='details'></p>
+  //   </div>
+  //   <div className='container'>
+  //     <h1>Cascading Style Sheets</h1>
+  //   </div>
+  //   <div className='details-container'>
+  //     <p className='details'></p>
+  //   </div>
+  //   <div className='container'>
+  //     <h1>JavaScript</h1>
+  //   </div>
+  //   <div className='details-container'>
+  //     <p className='details'></p>
+  //   </div>
+  // </div>
+  // );
 }
