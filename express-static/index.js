@@ -3,10 +3,9 @@ const path = require('path');
 
 const app = express();
 
-const joined = path.join('public', __dirname);
-console.log(joined);
+const publicPath = path.join('public', __dirname);
 
-app.use(express.static('public'));
+app.use(express.static(publicPath));
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
