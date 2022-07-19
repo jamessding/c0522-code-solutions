@@ -4,59 +4,38 @@ export default class Accordion extends React.Component {
     super(props);
     this.state = { topic: '' };
     this.handleClick = this.handleClick.bind(this);
-    this.topicList = this.topicList.bind(this);
+    this.createTopics = this.createTopics.bind(this);
   }
 
   handleClick(event) {
-    this.setState({ topic: event.target.value });
+    this.setState((event.target.textContent === this.state.topic) ? { topic: '' } : { topic: event.target.textContent });
   }
 
-  ListTopic(props) {
-    return (
-      <div className='container'>
-        <h1>{props.value}</h1>
-      </div>
-    );
-  }
-
-  topicList(props) {
+  createTopics(props) {
     const topics = props.topics;
-    const listTopics = topics.map(topic =>
-      <ListTopic key={topic.name} value={topic.name} />
-    );
-    return listTopics;
-  }
-
-  render() {
-    const topic = this.state.topic;
-    if (topic === '') {
+    return topics.map(topic => {
+      const topicHidden = (topic.name === this.state.topic) ? '' : 'hidden';
       return (
-        <div>
-          <this.topicList />
+        <div key={topic.name}>
+          <div onClick={this.handleClick} className='container'>
+            <h1>{topic.name}</h1>
+          </div>
+          <div className={`details-container ${topicHidden}`}>
+            <p className='details'>{topic.details}</p>
+          </div>
         </div>
       );
     }
+    );
   }
 
-  // <div>
-  //   <div className='container'>
-  //     <h1>Hypertext Markup Language</h1>
-  //   </div>
-  //   <div className='details-container'>
-  //     <p className='details'></p>
-  //   </div>
-  //   <div className='container'>
-  //     <h1>Cascading Style Sheets</h1>
-  //   </div>
-  //   <div className='details-container'>
-  //     <p className='details'></p>
-  //   </div>
-  //   <div className='container'>
-  //     <h1>JavaScript</h1>
-  //   </div>
-  //   <div className='details-container'>
-  //     <p className='details'></p>
-  //   </div>
-  // </div>
-  // );
+  render() {
+    return (
+        <div>
+          {
+            this.createTopics(this.props)
+          }
+        </div>
+    );
+  }
 }

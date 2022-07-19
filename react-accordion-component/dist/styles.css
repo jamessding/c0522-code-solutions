@@ -13,3 +13,7 @@ h1,
 p {
   padding-left: 1rem;
 }
+
+.hidden {
+  display: none;
+}
