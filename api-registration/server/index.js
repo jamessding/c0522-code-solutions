@@ -39,10 +39,7 @@ app.post('/api/auth/sign-up', (req, res, next) => {
         })
         .catch(err => next(err));
     })
-    .catch(err => {
-      console.error(err);
-    });
-
+    .catch(err => next(err));
   /**
    * Hash the user's password with `argon2.hash()`
    * Then, 😉
