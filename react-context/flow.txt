@@ -1,0 +1,49 @@
+1. User can sign up.
+- User fills out username and password and clicks register button.
+- The AuthForm component's handleSubmit method is called from onSubmit event.
+- A POST request is sent to /api/auth/sign-up using fetch method.
+- index.js in the server directory processes the POST request.
+- If username or password are not supplied, server will throw a new client error.
+- Else argon2 will generate a hashed password and send an sql query to the database.
+- The database inserts the user's username and hashed password into its users table.
+- Then the first element is destructured from the rows property of the result object and assigned to the const variable user.
+- The server sends a response status of 201 and the user object as a JSON string to the client.
+- The client receives the response and parses the JSON string into a JS object.
+- After successfully signing up, the hash location is changed to sign-in.
+
+2. User can sign in.
+- User fills out username and password and clicks login button.
+- The AuthForm component's handleSubmit method gets called.
+- A POST reqest is send to /api/auth/sign-in using fetch method.
+- Index.js in the server directory processes the POST request.
+- If username or password are not supplied, server will throw a new client error.
+- Else server will send an sql query to the database, selecting the userId and hashedPassword that matches the provided username.
+- Then the first element is destructured from the rows property of the result object and assigned to the const variable user.
+- If user object with matching username is not found, server will throw a new client error.
+- Else userId and hashedPassword properties are destructured from the user object and assigned to const variables userId and hashedPassword.
+- Argon2 verifies whether the hashedPassword and user provided password match.
+- If they don't match, server will throw a new client error.
+- Else a payload object is created with userId and username properties/values.
+- A JWT token is generated with payload and a token secret, and this token is sent to the client as a JSON string.
+- The client receives the response and parses the JSON string into a JS object.
+- If user and token values are truthy, then the onSignIn method of props of AuthForm class is called on response JS object.
+- This calls the handleSignIn method of the App class, which destructures user and token from result object.
+- The token is saved to local storage and the user property of state will be updated with user as its new value.
+
+3. User can stay signed in (even if they refresh the page).
+- When user refreshes the page, componentDidMount is called, which updates the route property of state to the hash location.
+- The getItem method of localStorage is called to retrieve the jwt token.
+- If the value of the token is truthy, then decode the token.
+- Update the user property of state to the value of user.
+- Update the isAuthorizing property of state to false.
+- Render method is called after state is updated and re-renders the app component.
+- React then updates the DOM.
+
+4. User can sign out.
+- User clicks Sign out button in navbar.
+- The Navbar component's onClick prop event triggers, which calls the handleSignOut method from the class App component.
+- The removeItem method of localStorage is called, which removes the jwt token from local storage.
+- The user property of state is updated to a value of null.
+- Render method is called after state is updated and re-renders the app component.
+- Value of the user property of contextValue and user property of state will be set to null.
+- React will then update the DOM.
