@@ -76,3 +76,7 @@ body {
   position: relative;
   left: -50rem;
 }
+
+.hidden {
+  display: none;
+}
